@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<div class="p-3 mb-2 bg-dark text-white">
+
+  <h3>Lista de datos</h3>
+  <br>
+  <button type="button" class="btn btn-outline-light" (click) = "nuevoDato()">Nuevo Dato</button>
+  <br><br>
+  
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let datos of datosAp" >
+        <th scope="row"><button type="button" class="btn btn-dark" (click) = "editarDato(datos.id)">{{ datos.id }}</button></th> 
+        <td> {{ datos.title}}</td>
+        <td> {{ datos.body}}</td>
+        <td> <button type="button" class="btn btn-outline-light" (click) = "eliminarDato(datos.id)">Eliminar</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <hr><br>
+</div>
+
+
+
+<app-footer></app-footer>
